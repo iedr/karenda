@@ -3,7 +3,7 @@
     "background_color": "#FFD700",
     "display": "browser",
     "scope": "/",
-    "start_url": "/",
+    "start_url": ".",
     "name": "Karenda",
     "short_name": "Karenda",
     "description": "Western-Japanese calendar converter",
