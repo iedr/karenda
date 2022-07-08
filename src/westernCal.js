@@ -4,15 +4,18 @@ import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
 import InputLabel from "@mui/material/InputLabel";
+import { ThemeProvider } from '@mui/material/styles';
 
 function WesternCal(props) {
   var westernYears = props.westernYears;
 
   return (
-    <Box sx={{ flexGrow: 1, backgroundColor: "#ccc9a1" }}>
-      <Typography variant="h1" component="div" align="center" gutterBottom>
-        Calendar
-      </Typography>
+    <>
+      <ThemeProvider theme={props.theme}>
+        <Typography variant="h3">
+          Calendar
+        </Typography>
+      </ThemeProvider>
 
       <FormControl sx={{ m: 1, minWidth: 120 }}>
         <InputLabel id="western-select">Year</InputLabel>
@@ -35,7 +38,7 @@ function WesternCal(props) {
           })}
         </Select>
       </FormControl>
-    </Box>
+    </>
   );
 }
 

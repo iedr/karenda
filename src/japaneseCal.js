@@ -3,16 +3,19 @@ import Typography from "@mui/material/Typography";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import InputLabel from "@mui/material/InputLabel";
+import { ThemeProvider } from '@mui/material/styles';
 
 function JapaneseCal(props) {
   var japYears = props.japYears;
   var eras = props.eras;
 
   return (
-    <Box sx={{ flexGrow: 1, backgroundColor: "#ccc9a1" }}>
-      <Typography variant="h1" component="div" align="center" gutterBottom>
-        カレンダー
-      </Typography>
+    <>
+      <ThemeProvider theme={props.theme}>
+        <Typography variant="h3">
+          カレンダー
+        </Typography>
+      </ThemeProvider>
 
       <FormControl sx={{ m: 1, minWidth: 120 }}>
         <InputLabel htmlFor="jap-select">Year</InputLabel>
@@ -47,7 +50,7 @@ function JapaneseCal(props) {
           })}
         </Select>
       </FormControl>
-    </Box>
+    </>
   );
 }
 
