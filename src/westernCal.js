@@ -2,7 +2,6 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
-import MenuItem from "@mui/material/MenuItem";
 import InputLabel from "@mui/material/InputLabel";
 import { ThemeProvider } from '@mui/material/styles';
 
@@ -11,13 +10,15 @@ function WesternCal(props) {
 
   return (
     <>
-      <ThemeProvider theme={props.theme}>
-        <Typography variant="h3">
-          Calendar
-        </Typography>
-      </ThemeProvider>
+      <Box sx={{ py: 2, display: "flex" }}>
+        <ThemeProvider theme={props.theme}>
+          <Typography variant="h3">
+            Calendar
+          </Typography>
+        </ThemeProvider>
+      </Box>
 
-      <FormControl sx={{ m: 1, minWidth: 120 }}>
+      <FormControl sx={{ minWidth: 120 }}>
         <InputLabel id="western-select">Year</InputLabel>
         <Select
           native

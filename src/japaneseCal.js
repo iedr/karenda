@@ -11,25 +11,26 @@ function JapaneseCal(props) {
 
   return (
     <>
-      <ThemeProvider theme={props.theme}>
-        <Typography variant="h3">
-          カレンダー
-        </Typography>
-      </ThemeProvider>
+      <Box sx={{ py: 2 }}>
+        <ThemeProvider theme={props.theme}>
+          <Typography variant="h3">
+            カレンダー
+          </Typography>
+        </ThemeProvider>
+      </Box>
 
-      <FormControl sx={{ m: 1, minWidth: 120 }}>
+      <FormControl sx={{ minWidth: 120 }}>
         <InputLabel htmlFor="jap-select">Year</InputLabel>
         <Select
           native
           value={props.currJapYear}
           id="jap-select"
-          label="Japanese Year"
+          label="Year"
           onChange={(e) => {
             props.setCurrJapYear(e.target.value);
             props.setCurrWesternYear(props.j2w[e.target.value][0]);
           }}
         >
-          <option aria-label="None" value="" />
           {eras.map((era, index) => {
             var era_english = era.split(" (")[0];
             var yearsInEra = [];
