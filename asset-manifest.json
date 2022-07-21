@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/karenda/static/css/main.1394d60e.css",
+    "main.js": "/karenda/static/js/main.67122492.js",
+    "service-worker.js": "/karenda/service-worker.js",
+    "index.html": "/karenda/index.html",
+    "main.1394d60e.css.map": "/karenda/static/css/main.1394d60e.css.map",
+    "main.67122492.js.map": "/karenda/static/js/main.67122492.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1394d60e.css",
+    "static/js/main.67122492.js"
+  ]
+}
