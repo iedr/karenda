@@ -9,11 +9,9 @@ const style = {
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  width: 400,
-  bgcolor: 'background.paper',
-  border: '2px solid #000',
-  boxShadow: 24,
-  p: 4,
+  backgroundColor: '#8EF9F3',
+  borderRadius: 3,
+  p: 3,
 };
 
 export default function InfoModal(props) {
@@ -33,14 +31,23 @@ export default function InfoModal(props) {
     >
       <Fade in={props.modalOpen}>
         <Box sx={style}>
-          <Typography id="modal-modal-title" variant="h6" component="h2">
-            Text in a modal
+          <Typography id="modal-modal-title" variant="h5">
+            Karenda
           </Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+
+          <Typography sx={{ mt: 2 }}>
+            Convert between the Western and the <a href="https://en.wikipedia.org/wiki/Japanese_era_name" target="_blank" rel="noreferrer">Japanese calendars</a> easily.
+          </Typography>
+
+          <Typography sx={{ mt: 2 }}>
+            カレンダー means <a href="https://nihongomaster.com/japanese/dictionary/word/3605/karenda-karenda" target="_blank" rel="noreferrer">"calendar"</a> in Japanese.
+          </Typography>
+
+          <Typography sx={{ mt: 2 }}>
+            The icon for this app is from <a href=" https://www.flaticon.com/free-icons/calendar" title="calendar icons" target="_blank" rel="noreferrer">here</a>.
           </Typography>
         </Box>
       </Fade>
-    </Modal>
+    </Modal >
   );
 }

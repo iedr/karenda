@@ -1,6 +1,5 @@
 import "./App.css";
 import Grid from "@mui/material/Grid";
-import { makeStyles } from '@mui/styles';
 import React, { useState } from "react";
 import WesternCal from "./westernCal";
 import JapaneseCal from "./japaneseCal";
@@ -9,21 +8,11 @@ import GithubCorner from 'react-github-corner';
 
 import Fab from '@mui/material/Fab';
 import Box from "@mui/material/Box";
+import Tooltip from '@mui/material/Tooltip';
 import QuestionMarkOutlinedIcon from '@mui/icons-material/QuestionMarkOutlined';
 
-import useMediaQuery from '@mui/material/useMediaQuery';
-import { useTheme } from "@mui/material";
 import { createTheme, responsiveFontSizes } from '@mui/material/styles';
 import InfoModal from "./infoModal";
-
-const useStyles = makeStyles(theme => ({
-  fab: {
-    position: 'fixed',
-    bottom: theme.spacing(2),
-    right: theme.spacing(2),
-  },
-}));
-
 
 function App() {
   var j2w = require("./data/j2w.json");
@@ -41,8 +30,6 @@ function App() {
 
   let theme = createTheme();
   theme = responsiveFontSizes(theme);
-
-  const classes = useStyles();
 
   return (
     <Box sx={{
@@ -106,13 +93,14 @@ function App() {
         </Grid>
 
         <Box sx={{ p: 2 }}>
-          <Fab size="large" aria-label="information" onClick={handleModalOpen} className={classes.fab}>
-            <QuestionMarkOutlinedIcon />
-          </Fab>
+          <Tooltip title="Information">
+            <Fab size="large" aria-label="information" onClick={handleModalOpen}>
+              <QuestionMarkOutlinedIcon />
+            </Fab>
+          </Tooltip>
         </Box>
 
         <InfoModal modalOpen={modalOpen} setModalOpen={setModalOpen} />
-
 
       </Grid>
     </Box >

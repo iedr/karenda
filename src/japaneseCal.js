@@ -2,6 +2,7 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
+import Tooltip from '@mui/material/Tooltip';
 import InputLabel from "@mui/material/InputLabel";
 import { ThemeProvider } from '@mui/material/styles';
 
@@ -13,9 +14,11 @@ function JapaneseCal(props) {
     <>
       <Box sx={{ py: 2 }}>
         <ThemeProvider theme={props.theme}>
-          <Typography variant="h3">
-            カレンダー
-          </Typography>
+          <Tooltip title="Calendar in Japanese">
+            <Typography variant="h3">
+              カレンダー
+            </Typography>
+          </Tooltip>
         </ThemeProvider>
       </Box>
 

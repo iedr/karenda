@@ -8,10 +8,9 @@
 // service worker, and the Workbox build step will be skipped.
 
 import { clientsClaim } from "workbox-core";
-import { ExpirationPlugin } from "workbox-expiration";
 import { precacheAndRoute, createHandlerBoundToURL } from "workbox-precaching";
 import { registerRoute } from "workbox-routing";
-import { StaleWhileRevalidate } from "workbox-strategies";
+import { CacheFirst } from "workbox-strategies";
 
 clientsClaim();
 
@@ -51,14 +50,9 @@ registerRoute(
 registerRoute(
   // Add in any other file extensions or routing criteria as needed.
   ({ url }) =>
-    url.origin === self.location.origin && url.pathname.endsWith(".png"), // Customize this strategy as needed, e.g., by changing to CacheFirst.
-  new StaleWhileRevalidate({
-    cacheName: "images",
-    plugins: [
-      // Ensure that once this runtime cache reaches a maximum size the
-      // least-recently used images are removed.
-      new ExpirationPlugin({ maxEntries: 50 }),
-    ],
+    url.origin === self.location.origin && url.pathname.endsWith(".json"), // Customize this strategy as needed, e.g., by changing to CacheFirst.
+  new CacheFirst({
+    cacheName: "karenda_cache"
   })
 );
 
@@ -69,25 +63,3 @@ self.addEventListener("message", (event) => {
     self.skipWaiting();
   }
 });
-
-// Any other custom service worker logic can go here.
-// const OFFLINE_VERSION = 1;
-// const CACHE_NAME = "karenda_cache";
-
-// self.addEventListener("activate", () => {
-//   console.log("Service Worker Active");
-// });
-
-// self.addEventListener("install", (e) => {
-//   let cacheReady = caches.open(CACHE_NAME).then((cache) => {
-//     // Returns a promise
-//     return cache.addAll([
-//       "./src/App.js",
-//       "./data/eras.json",
-//       "./data/j2w.json",
-//       "./data/w2j/json",
-//     ]);
-//   });
-
-//   e.waitUntil(cacheReady);
-// });
