@@ -1,7 +1,7 @@
 {
     "theme_color": "#FFD700",
     "background_color": "#FFD700",
-    "display": "browser",
+    "display": "standalone",
     "scope": "/",
     "start_url": ".",
     "name": "Karenda",
@@ -9,22 +9,22 @@
     "description": "Western-Japanese calendar converter",
     "icons": [
         {
-            "src": "/logos/icon-192x192.png",
+            "src": "/karenda/logos/icon-192x192.png",
             "sizes": "192x192",
             "type": "image/png"
         },
         {
-            "src": "/logos/icon-256x256.png",
+            "src": "/karenda/logos/icon-256x256.png",
             "sizes": "256x256",
             "type": "image/png"
         },
         {
-            "src": "/logos/icon-384x384.png",
+            "src": "/karenda/logos/icon-384x384.png",
             "sizes": "384x384",
             "type": "image/png"
         },
         {
-            "src": "/logos/icon-512x512.png",
+            "src": "/karenda/logos/icon-512x512.png",
             "sizes": "512x512",
             "type": "image/png"
         }
